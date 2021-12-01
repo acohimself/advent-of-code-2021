@@ -1,5 +1,7 @@
 # Advent of code 2021
-Haskell Solutions for Advent of Code 2021 - https://adventofcode.com/
+Haskell Solutions for Advent of Code 2021 - https://adventofcode.com
+
+# Template inspiration
 Template was borrowed from https://github.com/pabloariasal/advent-of-code-2021-haskell
 
 # Usage

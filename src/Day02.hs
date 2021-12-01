@@ -1,3 +1,4 @@
+-- https://adventofcode.com/2021/day/2
 module Day02 (solve) where
 
 part1 :: String -> String
