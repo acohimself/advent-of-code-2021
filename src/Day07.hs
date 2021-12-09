@@ -7,6 +7,8 @@ import Data.List.Split
 parse :: String -> [Int]
 parse s = map read $ splitOn "," s
 
+-- part1
+
 fuelUsageWithPosition :: Int -> [Int] -> Int
 fuelUsageWithPosition p xs = sum $ map (\x -> abs(x-p)) xs
 

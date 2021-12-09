@@ -25,9 +25,9 @@ binToInt s = sum $ map (\(i,v) -> v * 2^i) indexed
   where indexed = zip [0..] $ map (\c -> if c == '0' then 0 else 1) $ reverse s
 
 
-part1 :: [String] -> Int
-part1 s = do
-  let mosts   = map mostCommon $ transpose s
+part1 :: String -> Int
+part1 input = do
+  let mosts   = map mostCommon $ transpose $ lines input
   let gamma   = binToInt mosts
   let epsilon = binToInt $ binInvert mosts
   gamma * epsilon
@@ -56,8 +56,9 @@ co2Rating i ss  = co2Rating (i+1) $ filter (\s -> s!!i == least) ss
         least   | ones < zeros  = '1'
                 | otherwise     = '0'
 
-part2 :: [String] -> Int
-part2 s = binToInt (oxygenRating 0 s) * (binToInt $ co2Rating 0 s)
+part2 :: String -> Int
+part2 input = let bs = lines input 
+               in binToInt (oxygenRating 0 bs) * (binToInt $ co2Rating 0 bs)
 
 solve :: String -> IO ()
-solve input = putStrLn "--- Day 03 ---" >> print (part1 (lines input)) >> print (part2 (lines input))
+solve input = putStrLn "--- Day 03 ---" >> print (part1 input) >> print (part2 input)

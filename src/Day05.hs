@@ -45,7 +45,7 @@ findDuplicates ((x,y):ps) = case filter (==(x,y)) ps of
 findDuplicates _ = []
 
 part1 :: String -> Int
-part1 s = length $ findDuplicates $ concat $ map transformLineToPoints $ parse s
+part1 input = length $ findDuplicates $ concat $ map transformLineToPoints $ parse input
 
 -- Part 2 --
 transformDiagonal :: Line -> [Point]
@@ -64,7 +64,7 @@ transformLineToPoints2 l@((x1,y1),(x2,y2)) = case x2-x1 of
 
 
 part2 :: String -> Int
-part2 s = length $ findDuplicates $ concat $ map transformLineToPoints2 $ parse s
+part2 input = length $ findDuplicates $ concat $ map transformLineToPoints2 $ parse input
 
 solve :: String -> IO ()
 solve input = putStrLn "--- Day 05 ---" >> print (part1 input) >> print (part2 input)

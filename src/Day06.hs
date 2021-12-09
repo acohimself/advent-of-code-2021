@@ -18,7 +18,7 @@ simulate 0 xs = xs
 simulate days xs = simulate (days-1) (concat $ map dayForFish xs)
 
 part1 :: String -> Int
-part1 s = length $ simulate 80 (parse s)
+part1 input = length $ simulate 80 (parse input)
 
 -- Part 2 --
 
@@ -47,7 +47,7 @@ sumFishModel [] = 0
 sumFishModel ((days, number):fs) = number + sumFishModel fs 
 
 part2 :: String -> Int
-part2 s = sumFishModel $ simulate2 256 (prepareModel (parse s))
+part2 input = sumFishModel $ simulate2 256 (prepareModel (parse input))
 
 solve :: String -> IO ()
 solve input = putStrLn "--- Day 06 ---" >> print (part1 input) >> print (part2 input)
