@@ -32,6 +32,10 @@ library
         Day07
         Day08
         Day09
+        Day10
+        Day11
+        Day12
+        Day13
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -40,6 +44,7 @@ library
     -- other-extensions:
     build-depends:    
         base ^>=4.14.3.0,
+        containers,
         split,
         binary
     hs-source-dirs:   src
